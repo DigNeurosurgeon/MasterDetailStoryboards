@@ -12,6 +12,9 @@ class AdditionalViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // let isPhone = (UIDevice.currentDevice().userInterfaceIdiom == .Phone) ? true : false
+        
         navigationItem.leftBarButtonItem = splitViewController?.displayModeButtonItem()
         navigationItem.leftItemsSupplementBackButton = true
     }
