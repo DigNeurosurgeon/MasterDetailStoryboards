@@ -10,6 +10,10 @@ import UIKit
 
 class AdditionalViewController: UIViewController {
 
-    // Created view controller for test purposes. Does not need to do anything now.
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        navigationItem.leftBarButtonItem = splitViewController?.displayModeButtonItem()
+        navigationItem.leftItemsSupplementBackButton = true
+    }
 
 }

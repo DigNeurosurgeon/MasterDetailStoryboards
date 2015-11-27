@@ -33,14 +33,23 @@ class MasterViewController: UITableViewController {
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         let detailStoryboard = UIStoryboard(name: "DetailView", bundle: nil)
         let detailViewController = detailStoryboard.instantiateInitialViewController() as! DetailViewController
-        let navigationController = UINavigationController(rootViewController:detailViewController)
+        
+        let additionalStoryboard = UIStoryboard(name: "AdditionalView", bundle: nil)
+        let additionalViewConroller = additionalStoryboard.instantiateInitialViewController() as! AdditionalViewController
         
         let cell = tableView.cellForRowAtIndexPath(indexPath)
         if let textValue = cell?.textLabel?.text {
             detailViewController.labelText = textValue
         }
         
-        splitViewController?.showDetailViewController(navigationController, sender: nil)
+        var navigationController: UINavigationController!
+        if indexPath.row == items.count - 1 {
+            navigationController = UINavigationController(rootViewController:additionalViewConroller)
+        } else {
+            navigationController = UINavigationController(rootViewController:detailViewController)
+        }
+        
+        splitViewController?.showDetailViewController(navigationController!, sender: nil)
     }
 
 }
