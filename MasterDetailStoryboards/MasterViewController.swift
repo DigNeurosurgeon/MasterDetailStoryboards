@@ -10,7 +10,7 @@ import UIKit
 
 class MasterViewController: UITableViewController {
 
-    let items = ["Apple Watch", "iMac", "iPad", "iPhone", "Macbook"]
+    let items = ["Apple Watch", "iMac", "iPad", "iPhone", "Macbook", "Other"]
 
     
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
