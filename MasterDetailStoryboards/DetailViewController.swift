@@ -10,36 +10,23 @@ import UIKit
 
 class DetailViewController: UIViewController {
 
-    @IBOutlet weak var detailDescriptionLabel: UILabel!
-
-
-    var detailItem: AnyObject? {
-        didSet {
-            // Update the view.
-            self.configureView()
-        }
-    }
-
-    func configureView() {
-        // Update the user interface for the detail item.
-        if let detail = self.detailItem {
-            if let label = self.detailDescriptionLabel {
-                label.text = detail.description
-            }
-        }
-    }
-
+    
+    @IBOutlet weak var detailLabel: UILabel!
+    var labelText = "Choose item from wish list first"
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-        self.configureView()
+        detailLabel.text = labelText
+        navigationItem.title = "Xmas Present Choice"
+        navigationItem.leftBarButtonItem = splitViewController?.displayModeButtonItem()
+        navigationItem.leftItemsSupplementBackButton = true
     }
+    
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    @IBAction func nextButtonTapped(sender: AnyObject) {
+        let storyboard = UIStoryboard(name: "AdditionalView", bundle: nil)
+        let additionalViewController = storyboard.instantiateInitialViewController() as! AdditionalViewController
+        additionalViewController.title = "Wait for Santa!"
+        navigationController?.pushViewController(additionalViewController, animated: true)
     }
-
-
 }
-

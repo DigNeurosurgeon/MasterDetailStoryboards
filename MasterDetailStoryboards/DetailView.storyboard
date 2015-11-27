@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="tqs-g5-miv">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
+    </dependencies>
+    <scenes>
+        <!--Detail View Controller-->
+        <scene sceneID="WTq-dA-5od">
+            <objects>
+                <viewController id="tqs-g5-miv" customClass="DetailViewController" customModule="MasterDetailStoryboards" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="JIM-Xb-9dj"/>
+                        <viewControllerLayoutGuide type="bottom" id="eMT-0Z-VuA"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="yPH-5g-JYf">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZUj-Pc-3Zh">
+                                <rect key="frame" x="285" y="259" width="31" height="30"/>
+                                <animations/>
+                                <state key="normal" title="Buy!"/>
+                                <connections>
+                                    <action selector="nextButtonTapped:" destination="tqs-g5-miv" eventType="touchUpInside" id="czP-sf-rdu"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dd1-He-pIG">
+                                <rect key="frame" x="175" y="180" width="250" height="21"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="250" id="AKp-Nt-tqM"/>
+                                    <constraint firstAttribute="height" constant="21" id="ZQa-WE-hN9"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="ZUj-Pc-3Zh" firstAttribute="top" secondItem="dd1-He-pIG" secondAttribute="bottom" constant="58" id="FzB-po-bWU"/>
+                            <constraint firstItem="dd1-He-pIG" firstAttribute="centerX" secondItem="ZUj-Pc-3Zh" secondAttribute="centerX" id="IYK-RK-qvD"/>
+                            <constraint firstItem="dd1-He-pIG" firstAttribute="top" secondItem="JIM-Xb-9dj" secondAttribute="bottom" constant="160" id="RAs-da-hX3"/>
+                            <constraint firstItem="ZUj-Pc-3Zh" firstAttribute="centerX" secondItem="yPH-5g-JYf" secondAttribute="centerX" id="nDo-Pw-8vy"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="detailLabel" destination="dd1-He-pIG" id="fZi-uU-rmw"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Qgj-ae-Hau" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="603" y="406"/>
+        </scene>
+    </scenes>
+</document>
