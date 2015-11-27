@@ -12,7 +12,7 @@ class DetailViewController: UIViewController {
 
     
     @IBOutlet weak var detailLabel: UILabel!
-    var labelText = "Choose item from wish list first"
+    var labelText = "Choose item from wish list first."
     
     override func viewDidLoad() {
         super.viewDidLoad()
